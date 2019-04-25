@@ -1,0 +1,125 @@
+using System;
+using UnityEngine.Internal;
+
+namespace UnityEngine
+{
+    public class Physics
+    {
+        public const int AllLayers = -1;
+        public const int DefaultRaycastLayers = -5;
+        public const int IgnoreRaycastLayer = 4;
+        public const int kAllLayers = -1;
+        public const int kDefaultRaycastLayers = -5;
+        public const int kIgnoreRaycastLayer = 4;
+
+        public Physics();
+
+        public static float bounceThreshold { get; set; }
+        [Obsolete("Please use bounceThreshold instead.")]
+        public static float bounceTreshold { get; set; }
+        public static Vector3 gravity { get; set; }
+        public static float maxAngularVelocity { get; set; }
+        public static float minPenetrationForPenalty { get; set; }
+        [Obsolete("penetrationPenaltyForce has no effect.")]
+        public static float penetrationPenaltyForce { get; set; }
+        public static float sleepAngularVelocity { get; set; }
+        public static float sleepVelocity { get; set; }
+        public static int solverIterationCount { get; set; }
+
+        [ExcludeFromDocs]
+        public static bool CapsuleCast(Vector3 point1, Vector3 point2, float radius, Vector3 direction);
+        [ExcludeFromDocs]
+        public static bool CapsuleCast(Vector3 point1, Vector3 point2, float radius, Vector3 direction, float distance);
+        [ExcludeFromDocs]
+        public static bool CapsuleCast(Vector3 point1, Vector3 point2, float radius, Vector3 direction, out RaycastHit hitInfo);
+        public static bool CapsuleCast(Vector3 point1, Vector3 point2, float radius, Vector3 direction, float distance, int layerMask);
+        [ExcludeFromDocs]
+        public static bool CapsuleCast(Vector3 point1, Vector3 point2, float radius, Vector3 direction, out RaycastHit hitInfo, float distance);
+        public static bool CapsuleCast(Vector3 point1, Vector3 point2, float radius, Vector3 direction, out RaycastHit hitInfo, float distance, int layerMask);
+        [ExcludeFromDocs]
+        public static RaycastHit[] CapsuleCastAll(Vector3 point1, Vector3 point2, float radius, Vector3 direction);
+        [ExcludeFromDocs]
+        public static RaycastHit[] CapsuleCastAll(Vector3 point1, Vector3 point2, float radius, Vector3 direction, float distance);
+        public static RaycastHit[] CapsuleCastAll(Vector3 point1, Vector3 point2, float radius, Vector3 direction, float distance, int layermask);
+        [ExcludeFromDocs]
+        public static bool CheckCapsule(Vector3 start, Vector3 end, float radius);
+        public static bool CheckCapsule(Vector3 start, Vector3 end, float radius, int layermask);
+        [ExcludeFromDocs]
+        public static bool CheckSphere(Vector3 position, float radius);
+        public static bool CheckSphere(Vector3 position, float radius, int layerMask);
+        [WrapperlessIcall]
+        public static bool GetIgnoreLayerCollision(int layer1, int layer2);
+        [ExcludeFromDocs]
+        public static void IgnoreCollision(Collider collider1, Collider collider2);
+        [WrapperlessIcall]
+        public static void IgnoreCollision(Collider collider1, Collider collider2, bool ignore);
+        [ExcludeFromDocs]
+        public static void IgnoreLayerCollision(int layer1, int layer2);
+        [WrapperlessIcall]
+        public static void IgnoreLayerCollision(int layer1, int layer2, bool ignore);
+        [ExcludeFromDocs]
+        public static bool Linecast(Vector3 start, Vector3 end);
+        public static bool Linecast(Vector3 start, Vector3 end, int layerMask);
+        [ExcludeFromDocs]
+        public static bool Linecast(Vector3 start, Vector3 end, out RaycastHit hitInfo);
+        public static bool Linecast(Vector3 start, Vector3 end, out RaycastHit hitInfo, int layerMask);
+        [ExcludeFromDocs]
+        public static Collider[] OverlapSphere(Vector3 position, float radius);
+        public static Collider[] OverlapSphere(Vector3 position, float radius, int layerMask);
+        [ExcludeFromDocs]
+        public static bool Raycast(Ray ray);
+        [ExcludeFromDocs]
+        public static bool Raycast(Ray ray, float distance);
+        [ExcludeFromDocs]
+        public static bool Raycast(Ray ray, out RaycastHit hitInfo);
+        [ExcludeFromDocs]
+        public static bool Raycast(Vector3 origin, Vector3 direction);
+        public static bool Raycast(Ray ray, float distance, int layerMask);
+        [ExcludeFromDocs]
+        public static bool Raycast(Ray ray, out RaycastHit hitInfo, float distance);
+        [ExcludeFromDocs]
+        public static bool Raycast(Vector3 origin, Vector3 direction, float distance);
+        [ExcludeFromDocs]
+        public static bool Raycast(Vector3 origin, Vector3 direction, out RaycastHit hitInfo);
+        public static bool Raycast(Ray ray, out RaycastHit hitInfo, float distance, int layerMask);
+        public static bool Raycast(Vector3 origin, Vector3 direction, float distance, int layerMask);
+        [ExcludeFromDocs]
+        public static bool Raycast(Vector3 origin, Vector3 direction, out RaycastHit hitInfo, float distance);
+        public static bool Raycast(Vector3 origin, Vector3 direction, out RaycastHit hitInfo, float distance, int layerMask);
+        [ExcludeFromDocs]
+        public static RaycastHit[] RaycastAll(Ray ray);
+        [ExcludeFromDocs]
+        public static RaycastHit[] RaycastAll(Ray ray, float distance);
+        [ExcludeFromDocs]
+        public static RaycastHit[] RaycastAll(Vector3 origin, Vector3 direction);
+        public static RaycastHit[] RaycastAll(Ray ray, float distance, int layerMask);
+        [ExcludeFromDocs]
+        public static RaycastHit[] RaycastAll(Vector3 origin, Vector3 direction, float distance);
+        public static RaycastHit[] RaycastAll(Vector3 origin, Vector3 direction, float distance, int layermask);
+        [ExcludeFromDocs]
+        public static bool SphereCast(Ray ray, float radius);
+        [ExcludeFromDocs]
+        public static bool SphereCast(Ray ray, float radius, float distance);
+        [ExcludeFromDocs]
+        public static bool SphereCast(Ray ray, float radius, out RaycastHit hitInfo);
+        public static bool SphereCast(Ray ray, float radius, float distance, int layerMask);
+        [ExcludeFromDocs]
+        public static bool SphereCast(Ray ray, float radius, out RaycastHit hitInfo, float distance);
+        [ExcludeFromDocs]
+        public static bool SphereCast(Vector3 origin, float radius, Vector3 direction, out RaycastHit hitInfo);
+        public static bool SphereCast(Ray ray, float radius, out RaycastHit hitInfo, float distance, int layerMask);
+        [ExcludeFromDocs]
+        public static bool SphereCast(Vector3 origin, float radius, Vector3 direction, out RaycastHit hitInfo, float distance);
+        public static bool SphereCast(Vector3 origin, float radius, Vector3 direction, out RaycastHit hitInfo, float distance, int layerMask);
+        [ExcludeFromDocs]
+        public static RaycastHit[] SphereCastAll(Ray ray, float radius);
+        [ExcludeFromDocs]
+        public static RaycastHit[] SphereCastAll(Ray ray, float radius, float distance);
+        [ExcludeFromDocs]
+        public static RaycastHit[] SphereCastAll(Vector3 origin, float radius, Vector3 direction);
+        public static RaycastHit[] SphereCastAll(Ray ray, float radius, float distance, int layerMask);
+        [ExcludeFromDocs]
+        public static RaycastHit[] SphereCastAll(Vector3 origin, float radius, Vector3 direction, float distance);
+        public static RaycastHit[] SphereCastAll(Vector3 origin, float radius, Vector3 direction, float distance, int layerMask);
+    }
+}
