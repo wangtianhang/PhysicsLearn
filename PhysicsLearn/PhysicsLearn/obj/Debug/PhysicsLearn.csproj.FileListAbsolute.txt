@@ -1,0 +1,7 @@
+E:\gitHub\PhysicsLearn\PhysicsLearn\PhysicsLearn\PhysicsLearn\obj\Debug\PhysicsLearn.csprojAssemblyReference.cache
+E:\gitHub\PhysicsLearn\PhysicsLearn\PhysicsLearn\PhysicsLearn\obj\Debug\PhysicsLearn.csproj.CoreCompileInputs.cache
+E:\gitHub\PhysicsLearn\PhysicsLearn\PhysicsLearn\PhysicsLearn\bin\Debug\PhysicsLearn.exe.config
+E:\gitHub\PhysicsLearn\PhysicsLearn\PhysicsLearn\PhysicsLearn\bin\Debug\PhysicsLearn.exe
+E:\gitHub\PhysicsLearn\PhysicsLearn\PhysicsLearn\PhysicsLearn\bin\Debug\PhysicsLearn.pdb
+E:\gitHub\PhysicsLearn\PhysicsLearn\PhysicsLearn\PhysicsLearn\obj\Debug\PhysicsLearn.exe
+E:\gitHub\PhysicsLearn\PhysicsLearn\PhysicsLearn\PhysicsLearn\obj\Debug\PhysicsLearn.pdb
