@@ -79,6 +79,7 @@
     <Compile Include="Physics\CapsuleCollider.cs" />
     <Compile Include="Physics\Collider.cs" />
     <Compile Include="Physics\Physics.cs" />
+    <Compile Include="Physics\PhysicsManager.cs" />
     <Compile Include="Physics\RaycastHit.cs" />
     <Compile Include="Physics\SphereCollider.cs" />
     <Compile Include="Random\lib\DiceRoll.cs" />

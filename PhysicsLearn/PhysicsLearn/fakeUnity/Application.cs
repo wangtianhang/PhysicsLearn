@@ -8,12 +8,21 @@ namespace UnityEngine
 {
     class Application
     {
-        SceneMgr m_sceneMgr = null;
+        static SceneMgr m_sceneMgr = null;
+        static PhysicsManager m_physicsMgr = null;
 
-        public void Init()
+        public static void Init()
         {
             m_sceneMgr = new SceneMgr();
-            m_sceneMgr.Init(this);
+            m_sceneMgr.Init();
+
+            m_physicsMgr = new PhysicsManager();
+            m_physicsMgr.Init();
+        }
+
+        public static PhysicsManager GetPhysicsMgr()
+        {
+            return m_physicsMgr;
         }
     }
 

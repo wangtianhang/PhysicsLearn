@@ -8,14 +8,14 @@ namespace UnityEngine
 {
     class SceneMgr
     {
-        Application m_application = null;
+        //Application m_application = null;
 
 
         List<GameObject> m_goList = new List<GameObject>();
 
-        public void Init(Application application)
+        public void Init()
         {
-            m_application = application;
+            //m_application = application;
         }
 
         public void Update()

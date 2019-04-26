@@ -11,8 +11,9 @@ namespace PhysicsLearn
     {
         static void Main(string[] args)
         {
-            Application app = new Application();
-            app.Init();
+            //Application app = new Application();
+            //app.Init();
+            Application.Init();
 
             Console.WriteLine("运行结束");
             Console.ReadLine();
