@@ -5,7 +5,7 @@ using System.Text;
 // 从orgenode copy
 namespace UnityEngine
 {
-    public class Transform
+    public class Transform : Component
     {
         bool m_needParentUpdate = true;
 

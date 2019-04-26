@@ -75,6 +75,12 @@
     <Compile Include="debug\DebugHelper.cs" />
     <Compile Include="Misc\GUtil.cs" />
     <Compile Include="Misc\RotateHelper.cs" />
+    <Compile Include="Physics\BoxCollider.cs" />
+    <Compile Include="Physics\CapsuleCollider.cs" />
+    <Compile Include="Physics\Collider.cs" />
+    <Compile Include="Physics\Physics.cs" />
+    <Compile Include="Physics\RaycastHit.cs" />
+    <Compile Include="Physics\SphereCollider.cs" />
     <Compile Include="Random\lib\DiceRoll.cs" />
     <Compile Include="Random\lib\ExponentialDistribution.cs" />
     <Compile Include="Random\lib\GammaDistribution.cs" />
