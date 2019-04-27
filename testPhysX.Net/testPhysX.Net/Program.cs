@@ -14,6 +14,8 @@ class Program
         Foundation foundation = new Foundation();
         Physics physics = new Physics(foundation);
         Scene scene = physics.CreateScene();
+        //scene.Gravity = new Vector3(0, 0, 0);
+        //scene.Gravity = new Vector3(0, -9.8f, 0);
 
         Matrix4x4 mat = Matrix4x4.CreateTranslation(new Vector3(0, 0, 2));
         RigidDynamic actor = scene.Physics.CreateRigidDynamic(mat);
@@ -22,12 +24,17 @@ class Program
 
         SphereGeometry sphereGeo = new SphereGeometry(1);
         actor.CreateShape(sphereGeo, material);
+        actor.Mass = 1;
         scene.AddActor(actor);
 
-        HitFlag flag = HitFlag.Default | HitFlag.Normal;
-        bool ret = scene.Raycast(Vector3.Zero, new Vector3(0, 0, 1), 100, 100, HitCallback, flag);
-
-        Console.WriteLine(ret);
+        for(int i = 0; i < 100; ++i)
+        {
+            scene.Simulate(0.1f);
+            scene.FetchResults(true);
+            HitFlag flag = HitFlag.Default | HitFlag.Normal;
+            bool ret = scene.Raycast(Vector3.Zero, new Vector3(0, 0, 1), 100, 100, HitCallback, flag);
+            Console.WriteLine("Raycast " + ret);
+        }
 
         scene.Dispose();
         physics.Dispose();
@@ -40,7 +47,10 @@ class Program
     static bool HitCallback(RaycastHit[] array)
     {
         //Console.WriteLine("HitCallback" + flag);
-        Console.WriteLine("HitCallback " + array.Length);
+        if(array.Length > 0)
+        {
+            Console.WriteLine("HitCallback " + array[0].Position + " " + array[0].Actor.GlobalPose.Translation);
+        }
         return true;
     }
 }
