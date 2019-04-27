@@ -16,7 +16,7 @@ class Program
         Scene scene = physics.CreateScene();
 
         Matrix4x4 mat = Matrix4x4.CreateTranslation(new Vector3(0, 0, 2));
-        var actor = scene.Physics.CreateRigidDynamic(mat);
+        RigidDynamic actor = scene.Physics.CreateRigidDynamic(mat);
 
         Material material = scene.Physics.CreateMaterial(0.7f, 0.7f, 0.1f);
 
@@ -28,6 +28,10 @@ class Program
         bool ret = scene.Raycast(Vector3.Zero, new Vector3(0, 0, 1), 100, 100, HitCallback, flag);
 
         Console.WriteLine(ret);
+
+        scene.Dispose();
+        physics.Dispose();
+        foundation.Dispose();
 
         Console.WriteLine("运行结束");
         Console.ReadLine();
