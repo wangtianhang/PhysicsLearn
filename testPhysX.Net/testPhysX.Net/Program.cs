@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 using PhysX;
 using System.Numerics;
 //namespace testPhysX.Net
+//using UnityEngine;
 
 class Program
 {
     static void Main(string[] args)
     {
+        UnityEngine.Application.Init();
+
         Foundation foundation = new Foundation();
         Physics physics = new Physics(foundation);
         Scene scene = physics.CreateScene();
@@ -24,7 +27,7 @@ class Program
 
         SphereGeometry sphereGeo = new SphereGeometry(1);
         actor.CreateShape(sphereGeo, material);
-        actor.Mass = 1;
+        //actor.Mass = 1;
         scene.AddActor(actor);
 
         for(int i = 0; i < 100; ++i)
